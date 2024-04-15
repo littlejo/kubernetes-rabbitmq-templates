@@ -1,0 +1,20 @@
+#helm install benthos-producer benthos/benthos --namespace XXX --values benthos-producer.yaml
+config:
+  input:
+    generate:
+      count: 2000000
+      interval: "0.01s"
+      mapping: |
+        root.received_at = now()
+        root.message = "J'adore RabbitMQ " + random_int().string()
+        root.id = uuid_v4()
+        root.host = hostname()
+  output:
+    amqp_0_9:
+      urls: 
+        - amqp://USER:PASSWORD@rabbitmq-msp.rabbitmq-msp.svc.cluster.local:5672/VHOST
+      exchange: "XXXX"
+      key: "XXXXXXXXXXX"
+      metadata:
+        exclude_prefixes: []
+      max_in_flight: 100000

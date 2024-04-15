@@ -1,0 +1,14 @@
+apiVersion: rabbitmq.com/v1beta1
+kind: Binding
+metadata:
+  name: "XXXXX"
+  namespace: XXXXXX
+spec:
+  vhost: XXXXX
+  source: XXXXX
+  destination: XXXXXX
+  destinationType: queue
+  routingKey: "XXX"
+  rabbitmqClusterReference:
+    name: rabbitmq-msp
+    namespace: rabbitmq-msp

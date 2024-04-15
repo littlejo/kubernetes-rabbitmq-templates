@@ -1,0 +1,13 @@
+#helm install benthos-consumer benthos/benthos --namespace XXXXX --values benthos-consumer.yaml
+config:
+  input:
+    amqp_0_9:
+      urls: 
+        - amqp://USER:PASSWORD@rabbitmq-msp.rabbitmq-msp.svc.cluster.local:5672/VHOST
+      queue: "XXXX"
+  pipeline:
+    processors:
+    - log:
+        level: INFO
+        fields_mapping: |
+          root.message = this.message

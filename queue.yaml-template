@@ -1,0 +1,14 @@
+apiVersion: rabbitmq.com/v1beta1
+kind: Queue
+metadata:
+  name: XXXX
+  namespace: XXXX
+spec:
+  name: XXXX
+  autoDelete: false
+  durable: true
+  vhost: XXXX
+  type: classic
+  rabbitmqClusterReference:
+    name: rabbitmq-msp
+    namespace: rabbitmq-msp

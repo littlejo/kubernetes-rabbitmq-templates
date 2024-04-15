@@ -1,0 +1,9 @@
+apiVersion: rabbitmq.com/v1beta1
+kind: User
+metadata:
+  name: XXXX
+  namespace: XXXXX
+spec:
+  rabbitmqClusterReference:
+    name: rabbitmq-msp
+    namespace: rabbitmq-msp

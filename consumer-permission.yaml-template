@@ -1,0 +1,14 @@
+apiVersion: rabbitmq.com/v1beta1
+kind: Permission
+metadata:
+  name: XXXXX
+  namespace: XXXXX
+spec:
+  vhost: "XXXX"
+  userReference:
+    name: "XXXXX"
+  permissions:
+    read: "q-.*"
+  rabbitmqClusterReference:
+    name: rabbitmq-msp
+    namespace: rabbitmq-msp

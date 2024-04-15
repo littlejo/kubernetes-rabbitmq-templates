@@ -1,0 +1,14 @@
+apiVersion: rabbitmq.com/v1beta1
+kind: Exchange
+metadata:
+  name: "XXXXX"
+  namespace: msp-jli
+spec:
+  name: "XXXXX"
+  vhost: XXXXXX
+  type: direct
+  autoDelete: false
+  durable: true
+  rabbitmqClusterReference:
+    name: rabbitmq-msp
+    namespace: rabbitmq-msp
